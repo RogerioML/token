@@ -1,7 +1,7 @@
-package main
+package token
 
 func main() {
-	estrutura, erro := GetToken("https://apihom.correios.com.br/token/v1/autentica", "17811","gogogo")
+	estrutura, erro := GetToken("https://apihom.correios.com.br/token/v1/autentica", "17811", "gogogo")
 
 	println(estrutura, erro)
 }

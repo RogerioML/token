@@ -1,4 +1,4 @@
-package main
+package token
 
 import (
 	"crypto/tls"
@@ -37,17 +37,15 @@ type RetornoToken struct {
 func GetToken(host, user, pass string) (token string, err error) {
 	Ccu = NewClientConectUser(host, user, pass)
 
-	return  Ccu.GerarToken()
+	return Ccu.GerarToken()
 
 }
-
 
 func NewClientConectUser(host, user, pass string) ClientConectUser {
 	return ClientConectUser{
 		ClientConect: NewClientUser(host, user, pass),
 	}
 }
-
 
 func NewClientUser(enderecoBase, usuario, senha string) ClientHttpUser {
 
@@ -96,8 +94,5 @@ func (ccu ClientConectUser) GerarToken() (string, error) {
 		return "", err
 	}
 
-
 	return retToken.Token, nil
 }
-
-
